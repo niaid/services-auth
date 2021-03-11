@@ -1,5 +1,5 @@
 {
-  "name": "@labshare/services-auth",
+  "name": "@niaid/services-auth",
   "version": "3.4.2",
   "description": "Loopback 4 plugin for resource scope-based HTTP route authz",
   "main": "index.js",
@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LabShare/services-auth.git"
+    "url": "git+https://github.com/niaid/services-auth.git"
   },
   "keywords": [
     "LabShare",
@@ -38,12 +38,12 @@
     "Auth"
   ],
   "author": "",
-  "contributors": "https://github.com/LabShare/services-auth/graphs/contributors",
+  "contributors": "https://github.com/niaid/services-auth/graphs/contributors",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LabShare/services-auth/issues"
+    "url": "https://github.com/niaid/services-auth/issues"
   },
-  "homepage": "https://github.com/LabShare/services-auth#readme",
+  "homepage": "https://github.com/niaid/services-auth#readme",
   "dependencies": {
     "@loopback/boot": "^1.4.4",
     "@loopback/context": "^1.20.2",
@@ -88,8 +88,5 @@
       "@semantic-release/npm",
       "@semantic-release/git"
     ]
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
