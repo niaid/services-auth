@@ -122,10 +122,12 @@ export class AuthenticateActionProvider implements Provider<AuthenticateFn> {
       throw new Error('`tenant` is required');
     }
 
-    const jwksClientOptions = {
+    let jwksClientOptions:any = {
       ...defaultJwksClientOptions,
-      jwksUri: `${authUrl}/auth/${tenant}/.well-known/jwks.json`,
+      jwksUri: `${authUrl}/auth/${tenant}/.well-known/jwks.json`
     };
+    if(request.headers["x-forwarded-proto"])
+        jwksClientOptions.requestHeaders = {"X-Forwarded-Proto": request.headers["x-forwarded-proto"]};
 
     const secret =
       (await this.secretProvider()) ||

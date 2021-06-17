@@ -56,11 +56,12 @@ export class UserInfoActionProvider implements Provider<AuthenticateFn> {
       throw new Error('`tenant` configuration option is required');
     }
 
+    const headers = {Authorization: `Bearer ${token}`};
+    if(request.headers["x-forwarded-proto"])
+        headers["X-Forwarded-Proto"] = request.headers["x-forwarded-proto"];
     const {body} = await tiny.get({
       url: `${authUrl}/auth/${tenant}/me`,
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      headers: headers,
     });
 
     request.userInfo = body;
